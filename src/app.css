@@ -1,0 +1,202 @@
+@import 'tailwindcss';
+
+/* Custom styles for better aesthetics and responsiveness */
+/* Custom styles for better aesthetics and responsiveness */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    max-width: 400px;
+    width: 95%;
+    /* Make it fluid for smaller screens */
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    /* More rounded corners */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    /* Subtle border */
+}
+
+.display-container {
+    background-color: #2d3748;
+    /* Darker background for display */
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    text-align: right;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    min-height: 7rem;
+    /* Minimum height for both displays */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    overflow-x: auto;
+    /* Allow horizontal scrolling for long expressions */
+    white-space: nowrap;
+    /* Keep expression on one line */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+}
+
+.expression-display {
+    font-size: 1.5rem;
+    /* Smaller font for expression */
+    color: #a0aec0;
+    /* Lighter color for expression */
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+
+.main-display {
+    font-size: 2.5rem;
+    /* Larger font for main result */
+    font-weight: 300;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    /* Increased gap between buttons */
+    padding: 1.5rem;
+}
+
+.button {
+    background-color: #edf2f7;
+    /* Light button background */
+    color: #4a5568;
+    /* Darker text for buttons */
+    padding: 1.25rem;
+    /* More padding for larger touch targets */
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 0.75rem;
+    /* Rounded button corners */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    /* Prevent text selection */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow for buttons */
+}
+
+.button:hover {
+    background-color: #e2e8f0;
+    /* Slightly darker on hover */
+    transform: translateY(-1px);
+    /* Slight lift effect */
+}
+
+.button:active {
+    background-color: #cbd5e0;
+    /* Even darker on active */
+    transform: translateY(0);
+    /* Return to original position */
+}
+
+.operator {
+    background-color: #63b3ed;
+    /* Blue for operators */
+    color: #ffffff;
+}
+
+.operator:hover {
+    background-color: #4299e1;
+}
+
+.operator:active {
+    background-color: #3182ce;
+}
+
+.equals {
+    background-color: #48bb78;
+    /* Green for equals */
+    color: #ffffff;
+    grid-column: span 2;
+    /* Span two columns */
+}
+
+.equals:hover {
+    background-color: #38a169;
+}
+
+.equals:active {
+    background-color: #2f855a;
+}
+
+.clear {
+    background-color: #fc8181;
+    /* Red for clear */
+    color: #ffffff;
+}
+
+.clear:hover {
+    background-color: #e53e3e;
+}
+
+.clear:active {
+    background-color: #c53030;
+}
+
+.backspace {
+    background-color: #f6ad55;
+    /* Orange for backspace */
+    color: #ffffff;
+}
+
+.backspace:hover {
+    background-color: #ed8936;
+}
+
+.backspace:active {
+    background-color: #dd6b20;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .calculator {
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .display-container {
+        padding: 0.75rem 1rem;
+        min-height: 6rem;
+    }
+
+    .expression-display {
+        font-size: 1.2rem;
+    }
+
+    .main-display {
+        font-size: 2rem;
+    }
+
+    .buttons {
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .button {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+}
