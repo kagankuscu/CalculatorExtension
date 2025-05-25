@@ -1,3 +1,27 @@
+<script lang="ts">
+    let { onclick } = $props();
+
+    function write(e: Event) {
+        if (e === null)
+            return;
+
+        onclick(e?.target?.dataset.value);
+    }
+
+    $effect(() => {
+        const buttons = document.querySelectorAll("div.button");
+        for (let button of buttons) {
+            button?.addEventListener("click", (e: Event) => { write(e) });
+        }
+
+        return () => {
+            for (let button of buttons) {
+                button?.removeEventListener("click", (e: Event) => { write(e) });
+            }
+        }
+    });
+</script>
+
 <div class="buttons">
     <div class="button clear" data-value="C">C</div>
     <div class="button backspace" data-value="backspace">←</div>

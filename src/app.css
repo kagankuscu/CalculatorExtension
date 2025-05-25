@@ -1,31 +1,23 @@
 @import 'tailwindcss';
 
-/* Custom styles for better aesthetics and responsiveness */
-/* Custom styles for better aesthetics and responsiveness */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f0f2f5;
-    /* Light gray background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 500px;
+    max-width: 400px;
+    width: 400;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
 }
 
 .calculator {
     max-width: 400px;
-    width: 95%;
+    width: 100%;
     /* Make it fluid for smaller screens */
     background-color: #ffffff;
-    border-radius: 1.5rem;
     /* More rounded corners */
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     overflow: hidden;
-    border: 1px solid #e2e8f0;
-    /* Subtle border */
 }
 
 .display-container {
@@ -34,8 +26,6 @@ body {
     color: #ffffff;
     padding: 1rem 1.5rem;
     text-align: right;
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
     min-height: 7rem;
     /* Minimum height for both displays */
     display: flex;
@@ -172,11 +162,6 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
-    .calculator {
-        width: 95%;
-        margin: 1rem;
-    }
-
     .display-container {
         padding: 0.75rem 1rem;
         min-height: 6rem;
